@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "relatorio_exemplo"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e2cf658b-2ca3-45f9-af01-8c65f99e6af9"
+  }
+}

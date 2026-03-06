@@ -1,0 +1,58 @@
+table Clientes
+	lineageTag: 7b41259f-2174-4cc3-bc8a-660c63ce56fb
+
+	column ClienteID
+		formatString: 0
+		lineageTag: 51b165f3-9d16-4924-b720-790c329de517
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [ClienteID]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nome
+		lineageTag: 1abbfacd-cdd3-4d93-89ae-344f39864f3b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Nome]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segmento
+		lineageTag: ff3aebff-38eb-4047-9088-fcc273aa556a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Segmento]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Região
+		lineageTag: 5aa6f1ee-7e8a-4e9c-b219-0a3c8bf71458
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Região]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Clientes = calculated
+		mode: import
+		source = ```
+				
+				DATATABLE (
+				    "ClienteID", INTEGER,
+				    "Nome", STRING,
+				    "Segmento", STRING,
+				    "Região", STRING,
+				    {
+				        { 1, "Ana", "B2C", "Sudeste" },
+				        { 2, "Carlos", "B2C", "Sul" },
+				        { 3, "Empresa X", "B2B", "Sudeste" },
+				        { 4, "João", "B2C", "Nordeste" },
+				        { 5, "Empresa Y", "B2B", "Centro-Oeste" }
+				    }
+				)
+				
+				```
+
+	annotation PBI_Id = 70b5c286386e4350b340898bc7e94916
+

@@ -1,0 +1,13 @@
+relationship e2982085-8952-4d82-963d-6fa2bee8bd90
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Vendas.Data
+	toColumn: LocalDateTable_c09b1ae6-06ca-44f3-8fb3-527f64cfe0e1.Date
+
+relationship ea4e6a89-7c72-0267-c8ea-cc26ae36d8dd
+	fromColumn: Vendas.ProdutoID
+	toColumn: Produtos.ProdutoID
+
+relationship 9cdde8ca-79b5-d657-693f-60beac360998
+	fromColumn: Vendas.ClienteID
+	toColumn: Clientes.ClienteID
+

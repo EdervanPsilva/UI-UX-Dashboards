@@ -1,0 +1,116 @@
+{
+  "name": "Custom",
+  "visualStyles": {
+    "page": {
+      "*": {
+        "outspace": [
+          {
+            "color": {
+              "solid": {
+                "color": "#000000"
+              }
+            }
+          }
+        ],
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 100
+          }
+        ]
+      }
+    },
+    "*": {
+      "*": {
+        "outspacePane": [
+          {
+            "backgroundColor": {
+              "solid": {
+                "color": "#222222"
+              }
+            },
+            "foregroundColor": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            }
+          }
+        ],
+        "filterCard": [
+          {
+            "$id": "Available",
+            "backgroundColor": {
+              "solid": {
+                "color": "#222222"
+              }
+            },
+            "foregroundColor": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 0
+          },
+          {
+            "$id": "Applied",
+            "backgroundColor": {
+              "solid": {
+                "color": "#BDF1A1"
+              }
+            },
+            "foregroundColor": {
+              "solid": {
+                "color": "#000000"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#171717"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "radius": 20
+          }
+        ],
+        "visualHeader": [
+          {
+            "foreground": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 100
+          }
+        ]
+      }
+    }
+  },
+  "textClasses": {
+    "label": {
+      "color": "#FFFFFF"
+    },
+    "callout": {
+      "color": "#FFFFFF"
+    },
+    "title": {
+      "color": "#FFFFFF"
+    },
+    "header": {
+      "color": "#FFFFFE"
+    }
+  }
+}

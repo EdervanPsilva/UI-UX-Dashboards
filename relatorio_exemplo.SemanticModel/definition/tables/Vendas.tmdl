@@ -1,0 +1,123 @@
+table Vendas
+	lineageTag: 75cebe0f-8a9a-41e9-ac4f-93f05c84b9dc
+
+	measure ReceitaTotal =
+			
+			SUM ( Vendas[ValorTotal] )
+		formatString: "R$"#,0.00;-"R$"#,0.00;"R$"#,0.00
+		lineageTag: 91530137-b2ce-4c38-b7c9-963961f83e70
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-BR"}
+
+	measure QuantidadeVendida = ```
+			
+			SUM ( Vendas[Quantidade] )
+			
+			```
+		formatString: #,0
+		lineageTag: 55eb66e7-3212-4b36-9876-26fa5785cedc
+
+	measure TicketMedio = ```
+			
+			DIVIDE (
+			    [ReceitaTotal],
+			    [QuantidadeVendida],
+			    0
+			)
+			
+			```
+		formatString: "R$"#,0.00;-"R$"#,0.00;"R$"#,0.00
+		lineageTag: 8cf2174a-5c44-4d90-94b2-10171caf9446
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-BR"}
+
+	column Value
+		formatString: 0
+		lineageTag: 7dd76faa-7ad6-44fd-b0f0-9944cbf2e5c4
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Data
+		formatString: Short Date
+		lineageTag: 09fa0d86-187a-4ce6-8bd2-b3a27ee06305
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Data]
+
+		variation Variation
+			isDefault
+			relationship: e2982085-8952-4d82-963d-6fa2bee8bd90
+			defaultHierarchy: LocalDateTable_c09b1ae6-06ca-44f3-8fb3-527f64cfe0e1.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProdutoID
+		formatString: 0
+		lineageTag: 6a7fbeb2-6ea5-403c-aa38-21fad7a919c0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [ProdutoID]
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClienteID
+		formatString: 0
+		lineageTag: 8ce4e8e2-fc9b-497d-9c61-fc7de15c7067
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [ClienteID]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantidade
+		formatString: 0
+		lineageTag: 83c5b0ac-42f5-424d-9648-0a3ec2bdbd8d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Quantidade]
+
+		annotation SummarizationSetBy = Automatic
+
+	column ValorUnitario
+		formatString: "R$"#,0;-"R$"#,0;"R$"#,0
+		lineageTag: ec366f05-300c-4acf-8409-c713ff772969
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [ValorUnitario]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-BR"}
+
+	column ValorTotal
+		formatString: "R$"#,0;-"R$"#,0;"R$"#,0
+		lineageTag: 846d05dc-3855-48b4-90f8-df88b003df7d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [ValorTotal]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-BR"}
+
+	partition Vendas = calculated
+		mode: import
+		source = ```
+				
+				ADDCOLUMNS (
+				    GENERATESERIES (1, 500, 1),   -- 500 linhas de vendas simuladas
+				    "Data", DATE(2025, RANDBETWEEN(1,12), RANDBETWEEN(1,28)),
+				    "ProdutoID", RANDBETWEEN(1,6),
+				    "ClienteID", RANDBETWEEN(1,5),
+				    "Quantidade", RANDBETWEEN(1,10),
+				    "ValorUnitario", RANDBETWEEN(50,500),
+				    "ValorTotal", RANDBETWEEN(1,10) * RANDBETWEEN(50,500)
+				)
+				
+				```
+
+	annotation PBI_Id = ea7d6595958842898ebdbfba51632208
+

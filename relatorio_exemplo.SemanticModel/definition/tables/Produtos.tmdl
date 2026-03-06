@@ -1,0 +1,61 @@
+table Produtos
+	lineageTag: a82fbc52-0dc7-4141-bab0-1dc8899495de
+
+	column Produto
+		lineageTag: c897afa6-f886-4b91-b1cd-0dabb7089772
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Produto]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Categoria
+		lineageTag: 023ab9d7-71d9-4b9c-a657-f257c243bac4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Categoria]
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProdutoID
+		formatString: 0
+		lineageTag: a4d55c91-32bb-44dd-bede-dad4ee8d3e50
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [ProdutoID]
+
+		annotation SummarizationSetBy = Automatic
+
+	column PreçoUnitário
+		lineageTag: 8d57c8ca-94db-413e-9ca3-3108724a8d88
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [PreçoUnitário]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Produtos = calculated
+		mode: import
+		source = ```
+				
+				DATATABLE (
+				    "ProdutoID", INTEGER,
+				    "Produto", STRING,
+				    "Categoria", STRING,
+				    "PreçoUnitário", DOUBLE,
+				    {
+				        { 1, "Notebook", "Eletrônicos", 3500.00 },
+				        { 2, "Celular", "Eletrônicos", 1800.00 },
+				        { 3, "Camiseta", "Vestuário", 45.00 },
+				        { 4, "Tênis", "Vestuário", 250.00 },
+				        { 5, "Geladeira", "Eletrodomésticos", 2800.00 },
+				        { 6, "Fogão", "Eletrodomésticos", 1500.00 }
+				    }
+				)
+				
+				```
+
+	annotation PBI_Id = f23750f5c1694e3fadb498a5cfb9fe8a
+

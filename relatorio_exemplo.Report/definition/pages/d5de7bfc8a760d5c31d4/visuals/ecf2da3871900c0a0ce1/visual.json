@@ -1,0 +1,432 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "ecf2da3871900c0a0ce1",
+  "position": {
+    "x": 24.433212996389894,
+    "y": 647.48014440433212,
+    "z": 1000,
+    "height": 251.11913357400724,
+    "width": 1837.9205776173285,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Vendas"
+                    }
+                  },
+                  "Property": "Data"
+                }
+              },
+              "queryRef": "Vendas.Data",
+              "nativeQueryRef": "Data"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Vendas"
+                    }
+                  },
+                  "Property": "ProdutoID"
+                }
+              },
+              "queryRef": "Vendas.ProdutoID",
+              "nativeQueryRef": "ProdutoID1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Produtos"
+                    }
+                  },
+                  "Property": "Produto"
+                }
+              },
+              "queryRef": "TabelaTeste.Produto",
+              "nativeQueryRef": "Produto"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Produtos"
+                    }
+                  },
+                  "Property": "Categoria"
+                }
+              },
+              "queryRef": "TabelaTeste.Categoria",
+              "nativeQueryRef": "Categoria"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Produtos"
+                        }
+                      },
+                      "Property": "PreçoUnitário"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Produtos.PreçoUnitário)",
+              "nativeQueryRef": "Soma de PreçoUnitário"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Vendas"
+                        }
+                      },
+                      "Property": "Quantidade"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Vendas.Quantidade)",
+              "nativeQueryRef": "Soma de Quantidade"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Vendas"
+                    }
+                  },
+                  "Property": "ValorUnitario"
+                }
+              },
+              "queryRef": "Sum(Vendas.ValorUnitario)",
+              "nativeQueryRef": "ValorUnitario"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Vendas"
+                        }
+                      },
+                      "Property": "ValorTotal"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Vendas.ValorTotal)",
+              "nativeQueryRef": "Soma de ValorTotal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Clientes"
+                    }
+                  },
+                  "Property": "Nome"
+                }
+              },
+              "queryRef": "Clientes.Nome",
+              "nativeQueryRef": "Nome"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Clientes"
+                    }
+                  },
+                  "Property": "Segmento"
+                }
+              },
+              "queryRef": "Clientes.Segmento",
+              "nativeQueryRef": "Segmento"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Clientes"
+                    }
+                  },
+                  "Property": "Região"
+                }
+              },
+              "queryRef": "Clientes.Região",
+              "nativeQueryRef": "Região"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Vendas"
+                  }
+                },
+                "Property": "Data"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "241.152537702761D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "TabelaTeste.Produto"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "180.41558064715628D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "TabelaTeste.Categoria"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "120.86642270274095D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Vendas.ProdutoID"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "195.82722913475453D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Vendas.ValorTotal)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "188.54808673968955D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Clientes.Nome"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "252.3920046254233D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Clientes.Região"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Temas"
+                        }
+                      },
+                      "Property": "corFundo_visual"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Temas"
+                        }
+                      },
+                      "Property": "CorTexto"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Temas"
+                        }
+                      },
+                      "Property": "CorBorda"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "100D"
+                }
+              }
+            },
+            "foreground": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

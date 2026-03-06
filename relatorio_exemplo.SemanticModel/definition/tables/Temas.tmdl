@@ -1,0 +1,97 @@
+table Temas
+	lineageTag: bbd018a2-97da-4571-94f7-ce5b06f3cf99
+
+	measure CorBackground =
+			
+			SELECTEDVALUE ( Temas[Background], "#000000" )
+		lineageTag: 400cd79e-3973-4bd7-b53b-f19c62199a43
+
+	measure CorTexto =
+			
+			SELECTEDVALUE ( Temas[Texto], "#000000" )
+		lineageTag: 9ce4ca0e-d8e3-4681-85d4-ab0bc08ca706
+
+	measure CorDestaque =
+			
+			SELECTEDVALUE ( Temas[Destaque], "#000000" )
+		lineageTag: 5aa37d6d-5dfd-4d8e-aecf-386eb783cd50
+
+	measure CorBorda =
+			
+			SELECTEDVALUE ( Temas[Borda], "#000000" )
+		lineageTag: c3795494-79af-4dba-aaf5-0b2dbbbeb781
+
+	measure corFundo_visual =
+			
+			SELECTEDVALUE(Temas[Fundo_visual],"#000000")
+		lineageTag: aaaf6ea1-25dd-4b38-9a7f-9517bae249d2
+
+	column Tema
+		lineageTag: b872bf9f-98c9-417c-a764-bb7893dc7e62
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Tema]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Background
+		lineageTag: 683eb48e-abe8-4fed-9f12-aa51d80e71cd
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Background]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Texto
+		lineageTag: 24ecc684-bd3e-4e82-b59b-bec58adc66d1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Texto]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Destaque
+		lineageTag: fb685604-5525-43d8-a5ca-0a8827cb30d6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Destaque]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Borda
+		lineageTag: 2cd6be9e-1597-404a-8c66-9b4cf94463a3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Borda]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fundo_visual
+		lineageTag: fa19efe7-18bb-4c63-bff4-1100e99b3ac5
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Fundo_visual]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Temas = calculated
+		mode: import
+		source = ```
+				
+				DATATABLE (
+				    "Tema", STRING,
+				    "Background", STRING,
+				    "Texto", STRING,
+				    "Destaque", STRING,
+				    "Borda", STRING,
+				    "Fundo_visual", STRING,
+				    {
+				        { "Dark", "#000000", "#F8FAFC", "#5ea600" , "#000000", "#171717"},
+				        { "Light", "#FFFFFF", "#000000", "#0284C7", "#f2f2f2","#FFFFFF" }
+				    }
+				)
+				
+				```
+
+	annotation PBI_Id = 759617397e764c4f8d98d9f2eb6c51c3
+

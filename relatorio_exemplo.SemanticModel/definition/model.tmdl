@@ -1,0 +1,18 @@
+model Model
+	culture: pt-BR
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.146.1026.0 (25.08)+fb98ab832373de81dccd5c01cd96306a48477556
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Produtos
+ref table Temas
+ref table Clientes
+ref table Vendas
+ref table DateTableTemplate_e103fc40-ab70-4ec6-8d4e-fa32ba473eb8
+ref table LocalDateTable_c09b1ae6-06ca-44f3-8fb3-527f64cfe0e1
+
+ref cultureInfo pt-BR
+
